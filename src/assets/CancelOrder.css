@@ -1,0 +1,556 @@
+/* ============================================================
+   CancelOrder.css — BufferBites theme
+   Orange-500 accent · neutral-800/900 dark
+   ============================================================ */
+
+/* ── Header icon button (replaces old pill) ─────────────────── */
+.co-nav-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem;
+  border-radius: 0.75rem;
+  border: none;
+  background: #fee2e2;
+  color: #dc2626;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+  font-family: inherit;
+}
+
+.co-nav-btn:hover {
+  background: #ef4444;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.35);
+}
+
+.co-nav-btn.active {
+  background: #ef4444;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.3);
+}
+
+.dark .co-nav-btn {
+  background: rgba(239, 68, 68, 0.12);
+  color: #fca5a5;
+}
+
+.dark .co-nav-btn:hover,
+.dark .co-nav-btn.active {
+  background: #ef4444;
+  color: #fff;
+}
+
+/* red badge on the icon */
+.co-nav-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 9999px;
+  background: #dc2626;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.2rem;
+  box-shadow: 0 0 0 2px #fff;
+  pointer-events: none;
+}
+
+.dark .co-nav-badge {
+  box-shadow: 0 0 0 2px #0a0a0a;
+}
+
+/* ── Active Orders page wrapper ─────────────────────────────── */
+.co-page-wrap {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem;
+}
+
+.co-page-header {
+  margin-bottom: 1.75rem;
+}
+
+.co-page-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.co-page-title-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #ef4444;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.co-page-title {
+  font-size: 1.75rem;
+  font-weight: 900;
+  margin: 0 0 0.25rem;
+  color: inherit;
+  line-height: 1.1;
+}
+
+.co-page-subtitle {
+  font-size: 0.875rem;
+  color: #737373;
+  margin: 0;
+}
+
+.dark .co-page-subtitle {
+  color: #a3a3a3;
+}
+
+/* ── Empty state ─────────────────────────────────────────────── */
+.co-empty {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+}
+
+.co-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.co-empty-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: inherit;
+  margin: 0 0 0.35rem;
+}
+
+.co-empty-sub {
+  font-size: 0.8rem;
+  color: #a3a3a3;
+  margin: 0;
+}
+
+/* ── Order list ──────────────────────────────────────────────── */
+.co-order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── Individual order card ───────────────────────────────────── */
+.co-order-card {
+  background: #fff;
+  border: 1.5px solid #e5e5e5;
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.co-order-card:hover {
+  border-color: #fca5a5;
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.1);
+}
+
+.dark .co-order-card {
+  background: #171717;
+  border-color: #262626;
+  box-shadow: none;
+}
+
+.dark .co-order-card:hover {
+  border-color: #ef4444;
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.12);
+}
+
+/* top row */
+.co-order-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.co-order-emoji {
+  font-size: 1.75rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: #fff7ed;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dark .co-order-emoji {
+  background: #292524;
+}
+
+.co-order-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.co-order-name {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  margin: 0 0 0.15rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: inherit;
+}
+
+.co-order-meta {
+  font-size: 0.72rem;
+  color: #737373;
+  margin: 0;
+}
+
+.dark .co-order-meta {
+  color: #a3a3a3;
+}
+
+.co-order-total {
+  font-size: 1rem;
+  font-weight: 900;
+  color: #f97316;
+  flex-shrink: 0;
+}
+
+/* items list */
+.co-order-items {
+  background: #fafaf9;
+  border-radius: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.dark .co-order-items {
+  background: #262626;
+}
+
+.co-order-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8125rem;
+}
+
+.co-order-item-name {
+  font-weight: 600;
+  color: inherit;
+}
+
+.co-order-item-price {
+  font-weight: 700;
+  color: #737373;
+}
+
+.dark .co-order-item-price {
+  color: #a3a3a3;
+}
+
+/* countdown row */
+.co-countdown-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fef2f2;
+  border-radius: 1rem;
+  padding: 0.85rem 1rem;
+}
+
+.dark .co-countdown-row {
+  background: rgba(239, 68, 68, 0.07);
+}
+
+.co-countdown-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.co-countdown-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #dc2626;
+  margin: 0 0 0.2rem;
+}
+
+.dark .co-countdown-title {
+  color: #fca5a5;
+}
+
+.co-countdown-sub {
+  font-size: 0.72rem;
+  color: #a3a3a3;
+  margin: 0;
+}
+
+/* ── SVG countdown ring (big, used in both page cards + success card) */
+.co-big-ring-wrap {
+  position: relative;
+  width: 4.5rem;
+  height: 4.5rem;
+  flex-shrink: 0;
+}
+
+.co-big-ring-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.co-big-ring-track {
+  fill: none;
+  stroke-width: 5;
+  opacity: 0.15;
+}
+
+.co-big-ring-progress {
+  fill: none;
+  stroke-width: 5;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s linear;
+}
+
+.co-big-ring-seconds {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  line-height: 1.1;
+  pointer-events: none;
+}
+
+.co-big-ring-num {
+  font-size: 1.3rem;
+  color: #ef4444;
+}
+
+.co-big-ring-label {
+  font-size: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #a3a3a3;
+}
+
+/* ── Action buttons ──────────────────────────────────────────── */
+.co-actions {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.co-btn {
+  flex: 1;
+  padding: 0.7rem 0.5rem;
+  border-radius: 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-family: inherit;
+  transition: all 0.18s ease;
+}
+
+.co-btn-done {
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1.5px solid #bbf7d0;
+}
+
+.co-btn-done:hover {
+  background: #16a34a;
+  border-color: #16a34a;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(22, 163, 74, 0.3);
+}
+
+.dark .co-btn-done {
+  background: rgba(22, 163, 74, 0.1);
+  border-color: rgba(22, 163, 74, 0.3);
+  color: #4ade80;
+}
+
+.dark .co-btn-done:hover {
+  background: #16a34a;
+  border-color: #16a34a;
+  color: #fff;
+}
+
+.co-btn-cancel {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1.5px solid #fecaca;
+}
+
+.co-btn-cancel:hover {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.3);
+}
+
+.dark .co-btn-cancel {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+.dark .co-btn-cancel:hover {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #fff;
+}
+
+.co-btn-more {
+  background: #f97316;
+  color: #fff;
+  border: 1.5px solid #f97316;
+  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.25);
+}
+
+.co-btn-more:hover {
+  background: #ea580c;
+  border-color: #ea580c;
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+}
+
+/* ── Red progress bar ────────────────────────────────────────── */
+.co-progress-bar-wrap {
+  height: 4px;
+  border-radius: 9999px;
+  background: #fee2e2;
+  overflow: hidden;
+}
+
+.dark .co-progress-bar-wrap {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+.co-progress-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #f87171, #ef4444);
+  transition: width 1s linear;
+}
+
+/* ── Success-page card ───────────────────────────────────────── */
+.co-success-card {
+  background: #fff;
+  border: 1.5px solid #e5e5e5;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.dark .co-success-card {
+  background: #171717;
+  border-color: #262626;
+}
+
+.co-timer-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.co-timer-text {
+  flex: 1;
+}
+
+.co-timer-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: inherit;
+  margin: 0 0 0.2rem;
+}
+
+.co-timer-subtitle {
+  font-size: 0.75rem;
+  color: #a3a3a3;
+  margin: 0;
+}
+
+.co-confirmed-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #f0fdf4;
+  border-radius: 1rem;
+  padding: 0.85rem 1rem;
+}
+
+.dark .co-confirmed-row {
+  background: rgba(22, 163, 74, 0.1);
+}
+
+.co-confirmed-icon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.co-confirmed-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #16a34a;
+  margin: 0 0 0.15rem;
+}
+
+.dark .co-confirmed-title {
+  color: #4ade80;
+}
+
+.co-confirmed-sub {
+  font-size: 0.72rem;
+  color: #a3a3a3;
+  margin: 0;
+}
+
+/* ── Responsive label helpers (used by Order More btn) ──────── */
+.co-label-desktop { display: none; }
+.co-label-mobile  { display: inline; }
+
+@media (min-width: 640px) {
+  .co-label-desktop { display: inline; }
+  .co-label-mobile  { display: none; }
+}
+
+/* ── Responsive tweaks ───────────────────────────────────────── */
+@media (max-width: 480px) {
+  .co-page-wrap {
+    padding: 2rem 1rem 4rem;
+  }
+  .co-order-card {
+    padding: 1rem;
+  }
+  .co-page-title {
+    font-size: 1.4rem;
+  }
+  .co-actions {
+    flex-wrap: wrap;
+  }
+  .co-btn {
+    min-width: calc(50% - 0.325rem);
+  }
+}
